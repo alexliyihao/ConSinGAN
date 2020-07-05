@@ -31,7 +31,7 @@ def pipeline_rep_selection(imbalanced_label: int = 0,
     save_directory = os.path.join(parent_directory, save_directory)
 
     if os.path.exists(save_directory):
-        print("the representatives are already generated")
+        print(f"{save_directory} are already generated")
         return 0
     else:
         os.makedirs(save_directory)
