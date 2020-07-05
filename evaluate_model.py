@@ -32,7 +32,7 @@ def generate_image(model_dir, num_samples):
     parser = get_arguments()
     parser.add_argument('--model_dir', help='input image name', required=True)
     parser.add_argument('--gpu', type=int, help='which GPU', default=0)
-    parser.add_argument('--num_samples', type=int, help='which GPU', default=50)
+    parser.add_argument('--num_samples', type=int, default=50)
     parser.add_argument('--naive_img', help='naive input image  (harmonization or editing)', default="")
 
     opt = parser.parse_args(["--model_dir", model_dir, "--num_samples", str(num_samples)])
