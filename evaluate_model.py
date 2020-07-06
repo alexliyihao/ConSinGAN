@@ -24,8 +24,8 @@ def generate_samples(netG, reals_shapes, noise_amp, opt, fixed_noise = 0, scale_
     for idx in range(n):
         noise = functions.sample_random_noise(opt.train_stages - 1, reals_shapes, opt)
         sample = netG(noise, reals_shapes, noise_amp)
-        samples.append(functions.convert_image_np(sample.detach()))
-    return np.array(samples)
+        samples.append(functions.convert_image_np(sample.detach()).reshape(1,32,32,3))
+    return np.vstack(samples)
 
 
 def generate_image(model_dir, num_samples):
